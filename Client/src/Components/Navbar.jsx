@@ -27,7 +27,7 @@ function Navbar({user , setUser}) {
         <div onClick={()=>navigate("/")} className='flex items-center gap-2.5'>
           <img src={logo} alt="logo" className='h-9 w-auto object-contain' />
 
-          <h1 className='font-bold text-xl text-gray-700 leading-none'>Shifra{" "}<span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-emerald-500'>AI</span></h1>
+          <h1 className='font-bold text-xl text-gray-700 leading-none'>Eclipse{" "}<span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-emerald-500'>AI</span></h1>
 
         </div>
 

@@ -188,7 +188,7 @@ function AssistantPreview() {
            <div className='text-center'>
 
             <h2 className={`text-[20px] sm:text-[26px] md:text-[32px] font-semibold ${current.text}`}>
-              Hello! I'm Shifra AI
+              Hello! I'm Eclipse AI
             </h2>
 
             <p className={`mt-4 text-[13px] sm:text-[15px] md:text-[16px] leading-6 sm:leading-7 max-w-[280px] mx-auto ${current.sub}`}>

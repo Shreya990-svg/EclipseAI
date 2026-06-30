@@ -12,7 +12,7 @@
     const SERVER_URL =
         window.location.hostname === "localhost"
             ? "http://localhost:8000"
-            : "https://YOUR-RENDER-SERVER.onrender.com";
+            : "https://eclipseai-server.onrender.com";
 
     const theme = "dark"
 
@@ -34,38 +34,38 @@
 
     const popup = document.createElement("div")
 
-    popup.className = `shifra-popup theme-${theme}`
+    popup.className = `Eclipse-popup theme-${theme}`
 
     popup.innerHTML = `
-    <div class="shifra-overlay"></div>
+    <div class="Eclipse-overlay"></div>
 
-    <div class="shifra-content">
+    <div class="Eclipse-content">
 
-       <div class="shifra-top">
-            <div class="shifra-orb-wrap">
+       <div class="Eclipse-top">
+            <div class="Eclipse-orb-wrap">
 
-                <div class="shifra-orb-glow"></div>
+                <div class="Eclipse-orb-glow"></div>
 
-                <div class="shifra-orb"></div>
+                <div class="Eclipse-orb"></div>
 
             </div>
 
-            <h2 class="shifra-title">
-                Hello! I'm Shifra AI
+            <h2 class="Eclipse-title">
+                Hello! I'm Eclipse AI
             </h2>
 
-            <p class="shifra-sub">
+            <p class="Eclipse-sub">
                 Your smart voice assistant.
                 <br />
                 Ask anything about your website.
             </p>
 
 
-            <div class="shifra-status">
+            <div class="Eclipse-status">
                 Tap button to Speak
             </div>
 
-            <div class="shifra-wave">
+            <div class="Eclipse-wave">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -75,24 +75,24 @@
             </div>
 
             <!-- User Text -->
-            <div class="shifra-user-text">
+            <div class="Eclipse-user-text">
             </div>
 
             <!-- AI Text -->
-            <div class="shifra-ai-text">
+            <div class="Eclipse-ai-text">
             </div>
   
         </div>
 
 
-        <div class="shifra-bottom">
+        <div class="Eclipse-bottom">
             
-            <button class="shifra-mic">
+            <button class="Eclipse-mic">
 
                <img 
                src="${CLIENT_URL}/mic.svg"
                alt="mic"
-               class="shifra-mic-icon"/>
+               class="Eclipse-mic-icon"/>
             </button>
         </div>
     </div>
@@ -105,7 +105,7 @@
 
     const button = document.createElement("button")
 
-    button.className = `shifra-btn theme-${theme}`
+    button.className = `Eclipse-btn theme-${theme}`
 
     button.innerHTML = `
     <img 
@@ -152,15 +152,15 @@
     const applyConfig = () => {
         if (!assistantConfig) return;
 
-        popup.className = `shifra-popup theme-${assistantConfig.theme}`
+        popup.className = `Eclipse-popup theme-${assistantConfig.theme}`
 
-        button.className = `shifra-btn theme-${assistantConfig.theme}`
+        button.className = `Eclipse-btn theme-${assistantConfig.theme}`
 
-        const title = popup.querySelector(".shifra-title")
+        const title = popup.querySelector(".Eclipse-title")
 
         title.innerHTML = `Hello! I'm ${assistantConfig.assistantName}`;
 
-        const subTitle = popup.querySelector(".shifra-sub")
+        const subTitle = popup.querySelector(".Eclipse-sub")
         subTitle.innerHTML = `
     Welcome to
     ${assistantConfig.businessName}.
@@ -179,27 +179,27 @@
 
     const status =
         popup.querySelector(
-            ".shifra-status"
+            ".Eclipse-status"
         );
 
     const wave =
         popup.querySelector(
-            ".shifra-wave"
+            ".Eclipse-wave"
         );
 
     const userText =
         popup.querySelector(
-            ".shifra-user-text"
+            ".Eclipse-user-text"
         );
 
     const aiText =
         popup.querySelector(
-            ".shifra-ai-text"
+            ".Eclipse-ai-text"
         );
 
     const mic =
         popup.querySelector(
-            ".shifra-mic"
+            ".Eclipse-mic"
         );
 
 
