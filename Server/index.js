@@ -15,6 +15,7 @@ const privateCors =
   cors({
 
     origin: [
+      process.env.CLIENT_URL,
       "http://localhost:5173"
     ],
 

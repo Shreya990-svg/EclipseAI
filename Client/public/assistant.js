@@ -7,6 +7,13 @@
 
     const userId = script?.dataset?.userId
 
+    const CLIENT_URL = window.location.origin;
+
+    const SERVER_URL =
+        window.location.hostname === "localhost"
+            ? "http://localhost:8000"
+            : "https://YOUR-RENDER-SERVER.onrender.com";
+
     const theme = "dark"
 
     let assistantConfig = null
@@ -18,7 +25,7 @@
 
     link.rel = "stylesheet"
 
-    link.href = "http://localhost:5173/assistant.css"
+    link.href = `${CLIENT_URL}/assistant.css`;
 
     document.head.appendChild(link)
 
@@ -83,7 +90,7 @@
             <button class="shifra-mic">
 
                <img 
-               src="http://localhost:5173/mic.svg"
+               src="${CLIENT_URL}/mic.svg"
                alt="mic"
                class="shifra-mic-icon"/>
             </button>
@@ -102,7 +109,7 @@
 
     button.innerHTML = `
     <img 
-    src="http://localhost:5173/logo.png"
+    src="${CLIENT_URL}/logo.png"
     alt="logo"
     />`;
     document.body.appendChild(button)
@@ -124,7 +131,7 @@
 
     const loadAssistant = async () => {
         try {
-            const res = await fetch(`http://localhost:8000/api/assistant/config/${userId}`)
+            const res = await fetch(`${SERVER_URL}/api/assistant/config/${userId}`)
 
             const data = await res.json()
 
@@ -284,7 +291,7 @@
                 status.innerText = "Thinking...";
                 
 
-                const res = await fetch("http://localhost:8000/api/assistant/ask" , {
+                const res = await fetch(`${SERVER_URL}/api/assistant/ask` , {
                     method:"POST",
                     headers:{
                         "Content-Type":

@@ -8,8 +8,8 @@ import Navbar from './Components/Navbar'
 import Builder from './pages/Builder'
 import Billing from './pages/Billing'
 import { Toaster } from "react-hot-toast"
-export const ServerUrl = "http://localhost:8000"
-export const CLIENT_URL = "http://localhost:5173"
+export const ServerUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+export const CLIENT_URL = window.location.origin;
 function App() {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
