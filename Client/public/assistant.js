@@ -3,11 +3,15 @@
 
     // userData
 
-    const script = document.currentScript;
+    const script =
+        document.currentScript ||
+        document.querySelector(
+            'script[src*="assistant.js"]'
+        );
 
     const userId = script?.dataset?.userId
 
-    const CLIENT_URL = window.location.origin;
+    const SCRIPT_BASE = new URL(script.src).origin;
 
     const SERVER_URL =
         window.location.hostname === "localhost"
@@ -25,7 +29,7 @@
 
     link.rel = "stylesheet"
 
-    link.href = `${CLIENT_URL}/assistant.css`;
+    link.href = `${SCRIPT_BASE}/assistant.css`;
 
     document.head.appendChild(link)
 
@@ -90,7 +94,7 @@
             <button class="Eclipse-mic">
 
                <img 
-               src="${CLIENT_URL}/mic.svg"
+               src="${SCRIPT_BASE}/mic.svg"
                alt="mic"
                class="Eclipse-mic-icon"/>
             </button>
@@ -109,7 +113,7 @@
 
     button.innerHTML = `
     <img 
-    src="${CLIENT_URL}/logo.png"
+    src="${SCRIPT_BASE}/logo.png"
     alt="logo"
     />`;
     document.body.appendChild(button)
@@ -147,7 +151,6 @@
             );
         }
     }
-
 
     const applyConfig = () => {
         if (!assistantConfig) return;
