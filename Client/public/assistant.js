@@ -13,11 +13,8 @@
 
     const SCRIPT_BASE = new URL(script.src).origin;
 
-    const SERVER_URL =
-        window.location.hostname === "localhost"
-            ? "http://localhost:8000"
-            : "https://eclipseai-server.onrender.com";
-
+    const SERVER_URL = "https://eclipseai-server.onrender.com";
+    
     const theme = "dark"
 
     let assistantConfig = null
